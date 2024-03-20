@@ -50,3 +50,17 @@ function desencriptar(stringDesencriptada){
     return stringDesencriptada
     
 }
+
+function copiarAlPortapapeles() {
+    // Obtén el elemento textarea por su ID
+    var contenido = document.getElementById("mensaje-contenido").value;
+  
+    // Usa la API del portapapeles para copiar el contenido
+    navigator.clipboard.writeText(contenido)
+      .then(() => {
+        console.log('Texto copiado al portapapeles');
+      })
+      .catch(err => {
+        console.error('Error al copiar el texto: ', err);
+      });
+  }
